@@ -139,7 +139,7 @@ class TextMenu implements XMLObjectInterface
      * @param integer $defaultIndex
      * @return $this
      */
-    public function defaultIndex($defaultIndex)
+    public function setDefaultIndex($defaultIndex)
     {
         $this->defaultIndex = $defaultIndex;
         return $this;
@@ -155,7 +155,7 @@ class TextMenu implements XMLObjectInterface
      * @param string $style
      * @return $this
      */
-    public function style($style)
+    public function setStyle($style)
     {
         $validStyles = array(
             'numbered',
@@ -190,7 +190,7 @@ class TextMenu implements XMLObjectInterface
      * @param string $cancelActionURI
      * @return $this;
      */
-    public function cancelAction($cancelActionURI)
+    public function setCancelAction($cancelActionURI)
     {
         $this->cancelAction = $cancelActionURI;
         return $this;
@@ -228,7 +228,7 @@ class TextMenu implements XMLObjectInterface
      * @param int $seconds
      * @return $this
      */
-    public function timeout($seconds)
+    public function setTimeout($seconds)
     {
         $this->timeout = $seconds;
         return $this;
@@ -256,7 +256,7 @@ class TextMenu implements XMLObjectInterface
      * @param string $goodbyeLockInURI
      * @return $this
      */
-    public function goodbyeLockInURI($goodbyeLockInURI)
+    public function setGoodbyeLockInURI($goodbyeLockInURI)
     {
         if (true !== $this->lockIn) {
             $this->lockIn();
@@ -382,7 +382,7 @@ class TextMenu implements XMLObjectInterface
      * @param string $uri
      * @return $this
      */
-    public function scrollUp($uri)
+    public function setScrollUp($uri)
     {
         $this->scrollUp = $uri;
         return $this;
@@ -395,7 +395,7 @@ class TextMenu implements XMLObjectInterface
      * @param $uri
      * @return $this
      */
-    public function scrollDown($uri)
+    public function setScrollDown($uri)
     {
         $this->scrollDown = $uri;
         return $this;
@@ -488,6 +488,7 @@ class TextMenu implements XMLObjectInterface
             $textMenu->appendChild($tempDOM->importNode($item->generate(), true));
         }
 
+        unset($tempDOM);
         return $textMenu;
     }
 

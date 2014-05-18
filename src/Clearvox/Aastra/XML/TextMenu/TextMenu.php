@@ -112,10 +112,10 @@ class TextMenu implements XMLObjectInterface
      *
      * with a limit of 30
      *
-     * @param XMLObject $item
+     * @param XMLObjectInterface $item
      * @return $this
      */
-    public function addItem(XMLObject $item)
+    public function addItem(XMLObjectInterface $item)
     {
         $this->items[] = $item;
         return $this;
@@ -124,7 +124,7 @@ class TextMenu implements XMLObjectInterface
     /**
      * Return all items that will go inside the AastraIPPhoneTextMenu
      *
-     * @return array
+     * @return array[XMLObjectInterface]
      */
     public function getItems()
     {
@@ -485,8 +485,7 @@ class TextMenu implements XMLObjectInterface
         }
 
         foreach ($this->getItems() as $item) {
-            $import = $tempDOM->importNode($item->generate(), true);
-            $textMenu->appendChild($import);
+            $textMenu->appendChild($tempDOM->importNode($item->generate(), true));
         }
 
         return $textMenu;

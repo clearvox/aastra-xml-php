@@ -1,11 +1,13 @@
 <?php
 namespace Clearvox\Aastra\XML\Common;
 
-use Clearvox\Aastra\XML\Common\Attribute\Color\ColorInterface;
+use Clearvox\Aastra\XML\Common\Attribute\Color\Colorable;
 use Clearvox\Aastra\XML\XMLObjectInterface;
 
 class Title implements XMLObjectInterface
 {
+    use Colorable;
+
     /**
      * @var string
      */
@@ -16,19 +18,9 @@ class Title implements XMLObjectInterface
      */
     protected $wrap;
 
-    /**
-     * @var string
-     */
-    protected $color;
-
     public function __construct($title)
     {
         $this->title = $title;
-    }
-
-    public function setColor(ColorInterface $color)
-    {
-        $this->color = $color->getName();
     }
 
     /**

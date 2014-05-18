@@ -1,24 +1,21 @@
 <?php
 namespace Clearvox\Aastra\XML\Common;
 
-use Clearvox\Aastra\XML\Common\Attribute\Color\ColorInterface;
+use Clearvox\Aastra\XML\Common\Attribute\Color\Colorable;
 use Clearvox\Aastra\XML\XMLObjectInterface;
 
 class Prompt implements XMLObjectInterface
 {
-    protected $prompt;
+    use Colorable;
 
-    protected $color;
+    /**
+     * @var string
+     */
+    protected $prompt;
 
     public function __construct($prompt)
     {
         $this->prompt = $prompt;
-    }
-
-    public function setColor(ColorInterface $color)
-    {
-        $this->color = $color->getName();
-        return $this;
     }
 
     /**

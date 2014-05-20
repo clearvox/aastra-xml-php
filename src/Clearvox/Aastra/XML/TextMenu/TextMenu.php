@@ -10,6 +10,7 @@ class TextMenu implements XMLObjectInterface
      * This XML object can beep!
      */
     use Attributes\Beep;
+    use Attributes\Timeout;
 
     /**
      * @var integer
@@ -25,11 +26,6 @@ class TextMenu implements XMLObjectInterface
      * @var string
      */
     protected $style;
-
-    /**
-     * @var integer
-     */
-    protected $timeout;
 
     /**
      * @var bool
@@ -207,19 +203,6 @@ class TextMenu implements XMLObjectInterface
     public function wrapList()
     {
         $this->wrapList = true;
-        return $this;
-    }
-
-    /**
-     * Overrides the default 45 seconds timeout of the UI XML object.
-     * A timeout set to 0 will disable the timeout feature.
-     *
-     * @param int $seconds
-     * @return $this
-     */
-    public function setTimeout($seconds)
-    {
-        $this->timeout = $seconds;
         return $this;
     }
 

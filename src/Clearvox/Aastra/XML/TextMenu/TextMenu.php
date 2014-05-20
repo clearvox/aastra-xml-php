@@ -1,7 +1,7 @@
 <?php
 namespace Clearvox\Aastra\XML\TextMenu;
 
-use Clearvox\Aastra\XML\Common\Attribute\Beeps;
+use Clearvox\Aastra\XML\Common\Attribute as Attributes;
 use Clearvox\Aastra\XML\XMLObjectInterface;
 
 class TextMenu implements XMLObjectInterface
@@ -9,7 +9,7 @@ class TextMenu implements XMLObjectInterface
     /**
      * This XML object can beep!
      */
-    use Beeps;
+    use Attributes\Beep;
 
     /**
      * @var integer

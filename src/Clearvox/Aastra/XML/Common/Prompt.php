@@ -1,12 +1,12 @@
 <?php
 namespace Clearvox\Aastra\XML\Common;
 
-use Clearvox\Aastra\XML\Common\Attribute\Color\Colorable;
+use Clearvox\Aastra\XML\Common\Attribute as Attributes;
 use Clearvox\Aastra\XML\XMLObjectInterface;
 
 class Prompt implements XMLObjectInterface
 {
-    use Colorable;
+    use Attributes\Color;
 
     /**
      * @var string

@@ -1,7 +1,9 @@
 <?php
-namespace Clearvox\Aastra\XML\Common\Attribute\Color;
+namespace Clearvox\Aastra\XML\Common\Attribute;
 
-trait Colorable
+use Clearvox\Aastra\XML\Common\Attribute\Color\ColorInterface;
+
+trait Color
 {
     protected $color;
 

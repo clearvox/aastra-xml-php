@@ -2,7 +2,7 @@
 namespace Clearvox\Aastra\XML\Common\Attribute;
 
 /**
- * Trait TriggersDestroyOnExit
+ * Trait TriggerDestroyOnExit
  *
  * Will trigger the destroyOnExit on the currently shown
  * UI XML Object if it has destroyOnExit() set.
@@ -11,7 +11,7 @@ namespace Clearvox\Aastra\XML\Common\Attribute;
  * @package Aastra
  * @subpackage XML\Common\Attribute
  */
-trait TriggersDestroyOnExit
+trait TriggerDestroyOnExit
 {
     protected $triggerDestroyOnExit;
 

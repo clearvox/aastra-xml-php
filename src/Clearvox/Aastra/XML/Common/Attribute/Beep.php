@@ -2,7 +2,7 @@
 namespace Clearvox\Aastra\XML\Common\Attribute;
 
 /**
- * Beeps Trait
+ * Beep Trait
  *
  * The XML object can Beep!
  *
@@ -11,7 +11,7 @@ namespace Clearvox\Aastra\XML\Common\Attribute;
  * @package XML\Common\Attribute
  * @author Leon Rowland <leon@rowland.nl>
  */
-trait Beeps
+trait Beep
 {
     /**
      * @var bool

@@ -8,7 +8,7 @@ namespace Clearvox\Aastra\XML\Common\Attribute;
  *
  * @category Clearvox
  * @package Aastra
- * @package XML\Common\Attribute
+ * @subpackage XML\Common\Attribute
  * @author Leon Rowland <leon@rowland.nl>
  */
 trait Beep

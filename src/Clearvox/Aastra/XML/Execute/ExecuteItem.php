@@ -4,6 +4,15 @@ namespace Clearvox\Aastra\XML\Execute;
 use Clearvox\Aastra\XML\Command\CommandInterface;
 use Clearvox\Aastra\XML\XMLObjectInterface;
 
+/**
+ * The child XML of ExecuteItem to go inside the Execute
+ * class.
+ *
+ * @category Clearvox
+ * @package Aastra
+ * @subpackage XML\Execute
+ * @author Leon Rowland <leon@rowland.nl>
+ */
 class ExecuteItem implements XMLObjectInterface
 {
     /**

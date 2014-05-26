@@ -4,11 +4,28 @@ namespace Clearvox\Aastra\XML\Execute;
 use Clearvox\Aastra\XML\XMLObjectInterface;
 use Clearvox\Aastra\XML\Common\Attribute as Attributes;
 
+/**
+ * AastraIPPhoneExecute Object.  Use this object to generate one or more
+ * ExecuteItem entries.
+ *
+ * @see |Clearvox\Aastra\XML\Execute\ExecuteItem
+ *
+ * @uses |Clearvox\Aastra\XML\Common\Attribute\Beep
+ * @uses \Clearvox\Aastra\XML\Common\Attribute\TriggerDestroyOnExit
+ *
+ * @category Clearvox
+ * @package Aastra
+ * @subpackage XML\Execute
+ * @author Leon Rowland <leon@rowland.nl>
+ */
 class Execute implements XMLObjectInterface
 {
     use Attributes\Beep;
     use Attributes\TriggerDestroyOnExit;
 
+    /**
+     * @var ExecuteItem[]
+     */
     private $items = array();
 
     /**

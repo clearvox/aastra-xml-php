@@ -11,12 +11,24 @@ class Execute implements XMLObjectInterface
 
     private $items = array();
 
-    public function addItem(XMLObjectInterface $item)
+    /**
+     * Add an ExecuteItem to this AastraIPPhoneExecute instance.
+     *
+     * @param ExecuteItem $item
+     * @return $this
+     */
+    public function addItem(ExecuteItem $item)
     {
         $this->items[] = $item;
         return $this;
     }
 
+    /**
+     * Returns all ExecuteItems assigned to this AastraIPPhoneExecute
+     * instance.
+     *
+     * @return ExecuteItem[]
+     */
     public function getItems()
     {
         return $this->items;

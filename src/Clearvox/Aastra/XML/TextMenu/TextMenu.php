@@ -6,10 +6,14 @@ use Clearvox\Aastra\XML\XMLObjectInterface;
 
 class TextMenu implements XMLObjectInterface
 {
-    /**
-     * This XML object can beep!
-     */
+    use Attributes\AllowAnswer;
+    use Attributes\AllowConference;
+    use Attributes\AllowDrop;
+    use Attributes\AllowTransfer;
     use Attributes\Beep;
+    use Attributes\DestroyOnExit;
+    use Attributes\GoodbyeLockInURI;
+    use Attributes\Lockin;
     use Attributes\Timeout;
 
     /**
@@ -18,49 +22,9 @@ class TextMenu implements XMLObjectInterface
     protected $defaultIndex;
 
     /**
-     * @var bool
-     */
-    protected $destroyOnExit;
-
-    /**
      * @var string
      */
     protected $style;
-
-    /**
-     * @var bool
-     */
-    protected $lockIn;
-
-    /**
-     * @var string
-     */
-    protected $goodbyeLockInURI;
-
-    /**
-     * @var bool
-     */
-    protected $allowAnswer;
-
-    /**
-     * @var bool
-     */
-    protected $allowDrop;
-
-    /**
-     * @var bool
-     */
-    protected $allowXfer;
-
-    /**
-     * @var bool
-     */
-    protected $allowConf;
-
-    /**
-     * @var string
-     */
-    protected $cancelAction;
 
     /**
      * @var bool
@@ -168,30 +132,9 @@ class TextMenu implements XMLObjectInterface
         return $this;
     }
 
-    /**
-     * Specifies that the object is not to be kept in the browser
-     * on exit.
-     *
-     * @return $this
-     */
-    public function destroyOnExit()
-    {
-        $this->destroyOnExit = true;
-        return $this;
-    }
 
-    /**
-     * Specifies the URI to call when the user cancels
-     * the XML object.
-     *
-     * @param string $cancelActionURI
-     * @return $this;
-     */
-    public function setCancelAction($cancelActionURI)
-    {
-        $this->cancelAction = $cancelActionURI;
-        return $this;
-    }
+
+
 
     /**
      * Indicates that the items will be text wrapped on 2 lines
@@ -206,105 +149,9 @@ class TextMenu implements XMLObjectInterface
         return $this;
     }
 
-    /**
-     * The phone will ignore all events that would cause the screen
-     * to exit without using the keys defined by the object.
-     *
-     * @return $this
-     */
-    public function lockIn()
-    {
-        $this->lockIn = true;
-        return $this;
-    }
 
-    /**
-     * Will enable lockIn if not already.
-     * Defines the URI to be called when the Goodbye key is pressed during
-     * the locked XML session. This URI overrides the native behaviour of
-     * the Goodbye key which is to destroy the current XML object
-     * displayed.
-     *
-     * @param string $goodbyeLockInURI
-     * @return $this
-     */
-    public function setGoodbyeLockInURI($goodbyeLockInURI)
-    {
-        if (true !== $this->lockIn) {
-            $this->lockIn();
-        }
 
-        $this->goodbyeLockInURI = $goodbyeLockInURI;
-        return $this;
-    }
 
-    /**
-     * THIS METHOD ONLY APPLIES TO NON SOFTKEY PHONES!
-     *
-     * The phone will display Ignore and Answer if the XML object is
-     * displayed when the phone is in ringing state.
-     *
-     * Models: 6730i, 6731i, 53i, 6739i, 9143i, 6863i, 6865i
-     *
-     * @see Section 6.3 of the Official XML Document
-     * @return $this
-     */
-    public function allowAnswer()
-    {
-        $this->allowAnswer = true;
-        return $this;
-    }
-
-    /**
-     * THIS METHOD ONLY APPLIES TO NON SOFTKEY PHONES!
-     *
-     * The phone will display Drop if the XML object is displayed
-     * when the phone is in the connected state.
-     *
-     * Models: 6730i, 6731i, 53i, 6739i, 9143i, 6863i, 6865i
-     *
-     * @see Section 6.4 of the Official XML Document
-     * @return $this
-     */
-    public function allowDrop()
-    {
-        $this->allowDrop = true;
-        return $this;
-    }
-
-    /**
-     * THIS METHOD ONLY APPLIES TO NON SOFTKEY PHONES!
-     *
-     * The phone will display Xfer if the XML object is displayed
-     * when the phone is in the connected state.
-     *
-     * Models: 6730i, 6731i, 53i, 6739i, 9143i, 6863i, 6865i
-     *
-     * @see Section 6.4 of the Official XML Document
-     * @return $this
-     */
-    public function allowTransfer()
-    {
-        $this->allowXfer = true;
-        return $this;
-    }
-
-    /**
-     * THIS METHOD ONLY APPLIES TO NON SOFTKEY PHONES!
-     *
-     * The phone will display Conf if the XML object is displayed
-     * when the phone is in the connected state.
-     *
-     * Models: 6730i, 6731i, 53i, 6739i, 9143i, 6863i, 6865i
-     *
-     * @see Section 6.4 of the Official XML Document
-     * @return $this
-     */
-    public function allowConference()
-    {
-        $this->allowConf = true;
-        return $this;
-    }
 
     /**
      * The phone will not wrap the list. This means that scrolling down to

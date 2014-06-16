@@ -1,7 +1,7 @@
 <?php
 namespace Clearvox\Aastra\XML\Common\Attribute;
 
-trait Lockin
+trait LockIn
 {
     /**
      * @var bool

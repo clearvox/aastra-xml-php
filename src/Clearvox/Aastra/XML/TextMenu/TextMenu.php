@@ -13,7 +13,7 @@ class TextMenu implements XMLObjectInterface
     use Attributes\Beep;
     use Attributes\DestroyOnExit;
     use Attributes\GoodbyeLockInURI;
-    use Attributes\Lockin;
+    use Attributes\LockIn;
     use Attributes\Timeout;
 
     /**

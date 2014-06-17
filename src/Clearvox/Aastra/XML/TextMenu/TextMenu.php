@@ -11,6 +11,7 @@ class TextMenu implements XMLObjectInterface
     use Attributes\AllowDrop;
     use Attributes\AllowTransfer;
     use Attributes\Beep;
+    use Attributes\CancelAction;
     use Attributes\DestroyOnExit;
     use Attributes\GoodbyeLockInURI;
     use Attributes\LockIn;
